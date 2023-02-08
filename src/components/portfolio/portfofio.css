@@ -8,6 +8,7 @@
 
 .work__img {
   height: 10rem;
+  vertical-align: middle;
 }
 
 .work__item {
@@ -17,6 +18,10 @@
 }
 
 .work__item:hover {
+  color: var(--first-color);
+}
+
+.work__item.active {
   color: var(--first-color);
 }
 
@@ -30,6 +35,8 @@
   overflow: hidden;
   border-radius: 20px;
   box-shadow: var(--shadow);
+  display: flex;
+  justify-content: center;
 }
 
 .work__mask {
@@ -115,6 +122,72 @@
   opacity: 0;
 }
 
+.work__view-more-btn {
+  padding: 0;
+  margin: 0;
+  border: none;
+  background: none;
+  margin-top: 20px;
+}
+
+.work__view-more-btn {
+  position: relative;
+  display: flex;
+  font-weight: 600;
+  font-size: 20px;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.work__view-more-btn p {
+  margin: 0;
+  position: relative;
+  font-size: 20px;
+  color: var(--text-color);
+}
+
+.work__view-more-btn::after {
+  position: absolute;
+  content: "";
+  width: 0;
+  left: 0;
+  bottom: -7px;
+  background: var(--first-color);
+  height: 2px;
+  transition: 0.3s ease-out;
+}
+
+.work__view-more-btn p::before {
+  position: absolute;
+  content: "View More";
+  width: 0%;
+  inset: 0;
+  color: var(--first-color);
+  overflow: hidden;
+  transition: 0.3s ease-out;
+}
+
+.work__view-more-btn:hover::after {
+  width: 100%;
+}
+
+.work__view-more-btn:hover p::before {
+  width: 100%;
+}
+
+.work__view-more-btn:hover svg {
+  transform: translateX(4px);
+  color: var(--first-color);
+}
+
+.work__view-more-btn svg {
+  color: var(--text-color);
+  transition: 0.2s;
+  position: relative;
+  width: 15px;
+  transition-delay: 0.2s;
+}
+
 .work__card:hover .work__button {
   opacity: 1;
 }
@@ -126,6 +199,25 @@
 .work__card:hover .work__category {
   opacity: 1;
   transform: translateY(0);
+}
+
+.card {
+  background-color: var(--container-color);
+  padding: 1.875rem;
+  margin-top: 1.5rem;
+  box-shadow: var(--shadow);
+  border-radius: 20px;
+  margin-bottom: 3rem;
+}
+
+/* .card-text {
+  font-size: var(--small-font-size);
+  line-height: 1.5;
+  text-align: justify;
+} */
+
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
 }
 
 @media screen and (max-width: 1024px) {
