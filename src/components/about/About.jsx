@@ -34,18 +34,6 @@ const About = () => {
     });
   };
 
-  // const handleClick = () =>
-  //   toast("Download will soon being", {
-  //     position: "top-right",
-  //     autoClose: 5000,
-  //     hideProgressBar: false,
-  //     closeOnClick: true,
-  //     pauseOnHover: true,
-  //     draggable: true,
-  //     progress: undefined,
-  //     theme: "light",
-  //   });
-
   return (
     <section className="about container section" id="about">
       <h2 className="section__title">About Me</h2>
@@ -73,7 +61,7 @@ const About = () => {
               takes me next.
             </p>
             <a
-              href="../../assets/Freedom Resume.pdf"
+              href="#1"
               download="Freedom's resume.pdf"
               onClick={handleDownload}
               className="btn"
