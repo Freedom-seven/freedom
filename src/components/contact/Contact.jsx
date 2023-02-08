@@ -67,11 +67,15 @@ const Contact = () => {
         <div className="contact__info">
           <h3 className="contact__title">Let's talk about everything!</h3>
           <p className="contact__details">
-            Don't like forms? Send me an email. 👋
-            <br />
-            <br />
-            Email:{" "}
-            <a href="mailto:freewhynane62@gmail.com">freewhynane62@gmail.com</a>
+            Don't like forms? Please send me an email.
+            <div className="contact__email">
+              <a
+                href="mailto:freewhynane62@gmail.com"
+                className="contact__email-link"
+              >
+                <i class="fa-solid fa-envelope"></i>
+              </a>
+            </div>
           </p>
         </div>
 

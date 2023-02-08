@@ -12,6 +12,23 @@
   margin-bottom: 0.5rem;
 }
 
+.contact__email {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.contact__email-link {
+  font-size: 6rem;
+  color: var(--title-color);
+  font-weight: var(--font-bold);
+  transition: 0.3s;
+}
+
+.contact__email-link:hover {
+  color: hsl(43, 100%, 68%);
+}
+
 .contact__form-group {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
