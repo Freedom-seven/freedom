@@ -5,11 +5,12 @@ import "./about.css";
 import { toast } from "react-toastify";
 
 import "react-toastify/dist/ReactToastify.css";
-import Image from "../../assets/avatar-2.svg";
+import Image from "../../assets/avatar-20.png";
 // import AboutBox from "./AboutBox";
 
 const About = () => {
-  const [javascript, setJavascript] = useState(85);
+  const [isDownloaded, setIsDownloaded] = useState(false);
+  const [javascript, setJavascript] = useState(75);
   const [react, setReact] = useState(90);
   const [html, setHtml] = useState(90);
   const [css, setCss] = useState(90);
@@ -19,17 +20,31 @@ const About = () => {
   const [mongoDB, setMongoDB] = useState(60);
   const [git, setGit] = useState(90);
 
-  const handleClick = () =>
-    toast("Download will soon being", {
+  const handleDownload = () => {
+    setIsDownloaded(true);
+    toast("File downloaded successfully!", {
       position: "top-right",
       autoClose: 5000,
-      hideProgressBar: false,
+      hideProgressBar: true,
       closeOnClick: true,
       pauseOnHover: true,
       draggable: true,
       progress: undefined,
       theme: "light",
     });
+  };
+
+  // const handleClick = () =>
+  //   toast("Download will soon being", {
+  //     position: "top-right",
+  //     autoClose: 5000,
+  //     hideProgressBar: false,
+  //     closeOnClick: true,
+  //     pauseOnHover: true,
+  //     draggable: true,
+  //     progress: undefined,
+  //     theme: "light",
+  //   });
 
   return (
     <section className="about container section" id="about">
@@ -57,7 +72,12 @@ const About = () => {
               improve as a developer, and am excited to see where my career
               takes me next.
             </p>
-            <a href="#1" onClick={handleClick} className="btn">
+            <a
+              href="../../assets/Freedom Resume.pdf"
+              download="Freedom's resume.pdf"
+              onClick={handleDownload}
+              className="btn"
+            >
               Download CV
             </a>
           </div>
@@ -173,7 +193,7 @@ const About = () => {
 
             <div className="skills__data">
               <div className="skills__titles">
-                <h3 className="skills__name">Express</h3>
+                <h3 className="skills__name">ExpressJs</h3>
                 <span className="skills__number">{express}%</span>
               </div>
 
