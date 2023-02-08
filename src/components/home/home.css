@@ -42,7 +42,7 @@
 
 .scroll__down {
   position: absolute;
-  bottom: 2.5rem;
+  bottom: 2.5rem !important;
   left: 0;
   width: 100%;
 }
