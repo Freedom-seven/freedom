@@ -1,5 +1,5 @@
 import Image1 from "../../assets/avatar-1.svg";
-import Image3 from "../../assets/avatar-3.svg";
+import Image2 from "../../assets/avatar-2.svg";
 
 const Data = [
   {
@@ -12,15 +12,15 @@ const Data = [
   },
   {
     id: 2,
-    image: Image3,
+    image: Image1,
     title: "Isacc",
     subtitle: "Team mate",
     comment:
       "I had the pleasure of working with Freedom and I can confidently say that He is  an asset to any development team. His technical skills are top-notch and his ability to collaborate and problem-solve is exceptional.",
   },
   {
-    id: 2,
-    image: Image3,
+    id: 3,
+    image: Image2,
     title: "Mr. Francis",
     subtitle: "Client",
     comment:
