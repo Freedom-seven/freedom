@@ -61,7 +61,7 @@ const About = () => {
               takes me next.
             </p>
             <a
-              href="#1"
+              href="https://drive.google.com/file/d/1oOp5-vNkXgAYVdHTgw4jcsW8t64XeqY6/view?usp=sharing"
               download="Freedom's resume.pdf"
               onClick={handleDownload}
               className="btn"
