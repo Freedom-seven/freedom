@@ -26,6 +26,7 @@ import {
   Work24,
   Work25,
   Work26,
+  Work27,
 } from "./Image";
 
 const Menu = [
@@ -257,6 +258,14 @@ const Menu = [
     category: "Design",
     link: "https://dainty-platypus-3bd868.netlify.app",
     github_link: "https://github.com/Freedom-seven/Plane",
+  },
+  {
+    id: 27,
+    image: Work27,
+    title: "Qizz Master",
+    category: "Web",
+    link: "https://quizzmasters.netlify.app/",
+    github_link: "https://github.com/Freedom-seven/quizmaster",
   },
 ];
 

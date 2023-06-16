@@ -24,7 +24,7 @@ import Work23 from "../../assets/work-24.png";
 import Work24 from "../../assets/work-25.png";
 import Work25 from "../../assets/work-26.png";
 import Work26 from "../../assets/work-27.png";
-// import Work27 from "../../assets/work-28.png";
+import Work27 from "../../assets/Qizz_Master.png";
 // import Work28 from "../../assets/work-29.png";
 // import Work29 from "../../assets/work-30.png";
 // import Work30 from "../../assets/work-31.png";
@@ -56,7 +56,7 @@ export {
   Work24,
   Work25,
   Work26,
-  //   Work27,
+  Work27,
   //   Work28,
   //   Work29,
   //   Work30,
