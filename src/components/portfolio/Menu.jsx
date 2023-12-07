@@ -26,7 +26,8 @@ import {
   Work24,
   Work25,
   Work26,
-  Work27,
+  quizz,
+  fruity,
 } from "./Image";
 
 const Menu = [
@@ -261,11 +262,19 @@ const Menu = [
   },
   {
     id: 27,
-    image: Work27,
+    image: quizz,
     title: "Qizz Master",
     category: "Web",
     link: "https://quizzmasters.netlify.app/",
     github_link: "https://github.com/Freedom-seven/quizmaster",
+  },
+  {
+    id: 28,
+    image: fruity,
+    title: "Fruity",
+    category: "Web",
+    link: "https://fruitymart.netlify.app/",
+    github_link: "https://github.com/Freedom-seven/fruity",
   },
 ];
 

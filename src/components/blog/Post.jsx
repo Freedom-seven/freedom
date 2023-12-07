@@ -21,7 +21,7 @@ const Post = [
     id: 2,
     link: "education",
     image:
-      "https://www.insiderintelligence.com/static/5ecb856d09def78da57ec3fac2f6ce5c/72c11/blockchain.webp",
+      "https://blogs.iadb.org/caribbean-dev-trends/wp-content/uploads/sites/34/2017/12/Blockchain1.jpg",
     date: "27 December, 2022",
     title:
       "Building a Better Future with Blockchain: Transforming Industries and Transactions",
