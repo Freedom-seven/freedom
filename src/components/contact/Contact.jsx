@@ -5,6 +5,7 @@ import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 import "./contact.css";
+import { AnimatedTitle } from "../animation/TextAnimation";
 
 const Contact = () => {
   const [name, setName] = useState("");
@@ -61,7 +62,7 @@ const Contact = () => {
 
   return (
     <section className="contact container section" id="contact">
-      <h2 className="section__title">Get In Touch</h2>
+      <AnimatedTitle text="Get In Touch" />
 
       <div className="contact__container grid">
         <div className="contact__info">

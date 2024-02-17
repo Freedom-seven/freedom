@@ -10,11 +10,12 @@ import { Swiper, SwiperSlide } from "swiper/react";
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/pagination";
+import { AnimatedTitle } from "../animation/TextAnimation";
 
 const Testimonials = () => {
   return (
     <section className="testimonials container section" id="testimonials">
-      <h2 className="section__title">Client & Reviews</h2>
+      <AnimatedTitle text="Client & Reviews" />
 
       <Swiper
         className="testimonials__container grid"

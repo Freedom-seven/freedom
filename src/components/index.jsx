@@ -8,6 +8,13 @@ import Testimonials from "./testimonials/Testimonials";
 import Blog from "./blog/Blog";
 import Contact from "./contact/Contact";
 import About from "./about/About";
+import {
+  TextAnimation,
+  TextTitleAnimation,
+  AnimatedTitle,
+} from "./animation/TextAnimation";
+import ProgressBar from "./animation/ProgressBar";
+import Speaker from "./animation/Speaker";
 
 export {
   Sidebar,
@@ -20,4 +27,9 @@ export {
   Blog,
   Contact,
   About,
+  TextAnimation,
+  TextTitleAnimation,
+  AnimatedTitle,
+  ProgressBar,
+  Speaker,
 };

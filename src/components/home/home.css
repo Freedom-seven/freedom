@@ -1,6 +1,6 @@
 .home {
   position: relative;
-  min-height: 100vh;
+  min-height: 120vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -14,7 +14,7 @@
 
 .home__img {
   margin-bottom: 1.5rem;
-  height: 17rem;
+  height: 18rem;
 }
 
 .home__name {
