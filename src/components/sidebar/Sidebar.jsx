@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./sidebar.css";
+import { motion } from "framer-motion";
 import Logo from "../../assets/logo.png";
 
 const Sidebar = () => {
@@ -9,53 +10,92 @@ const Sidebar = () => {
     <>
       <aside className={toggle ? "aside show-menu" : "aside"}>
         <a href="#home" className="nav__logo">
-          <img src={Logo} alt="" className="logo" />
+          <motion.img
+            src={Logo}
+            alt=""
+            className="logo"
+            whileHover={{ scale: 1.1 }}
+            initial={{ scale: 0.9, rotate: -10 }}
+            animate={toggle ? { rotate: 0 } : { rotate: 0, scale: 1 }}
+            transition={{
+              y: { type: "spring", stiffness: 500, damping: 15 },
+              rotate: { duration: 1 },
+            }}
+          />
         </a>
 
         <nav className="nav">
           <div className="nav__menu">
             <ul className="nav__list">
-              <li className="nav__item">
+              <motion.li
+                className="nav__item"
+                whileHover={{ scale: 1.1 }}
+                transition={{ type: "spring", stiffness: 300 }}
+              >
                 <a href="#home" className="nav__link">
                   <i className="icon-home"></i>
                 </a>
-              </li>
+              </motion.li>
 
-              <li className="nav__item">
+              <motion.li
+                className="nav__item"
+                whileHover={{ scale: 1.1 }}
+                transition={{ type: "spring", stiffness: 300 }}
+              >
                 <a href="#about" className="nav__link">
                   <i className="icon-user-following"></i>
                 </a>
-              </li>
+              </motion.li>
 
-              <li className="nav__item">
+              <motion.li
+                className="nav__item"
+                whileHover={{ scale: 1.1 }}
+                transition={{ type: "spring", stiffness: 300 }}
+              >
                 <a href="#services" className="nav__link">
                   <i className="icon-briefcase"></i>
                 </a>
-              </li>
+              </motion.li>
 
-              <li className="nav__item">
+              <motion.li
+                className="nav__item"
+                whileHover={{ scale: 1.1 }}
+                transition={{ type: "spring", stiffness: 300 }}
+              >
                 <a href="#resume" className="nav__link">
                   <i className="icon-graduation"></i>
                 </a>
-              </li>
+              </motion.li>
 
-              <li className="nav__item">
+              <motion.li
+                className="nav__item"
+                whileHover={{ scale: 1.1 }}
+                transition={{ type: "spring", stiffness: 300 }}
+              >
                 <a href="#work" className="nav__link">
                   <i className="icon-layers"></i>
                 </a>
-              </li>
+              </motion.li>
 
-              <li className="nav__item">
+              <motion.li
+                className="nav__item"
+                whileHover={{ scale: 1.1 }}
+                transition={{ type: "spring", stiffness: 300 }}
+              >
                 <a href="#blog" className="nav__link">
                   <i className="icon-note"></i>
                 </a>
-              </li>
+              </motion.li>
 
-              <li className="nav__item">
+              <motion.li
+                className="nav__item"
+                whileHover={{ scale: 1.1 }}
+                transition={{ type: "spring", stiffness: 300 }}
+              >
                 <a href="#contact" className="nav__link">
                   <i className="icon-bubble"></i>
                 </a>
-              </li>
+              </motion.li>
             </ul>
           </div>
         </nav>

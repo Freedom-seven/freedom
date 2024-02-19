@@ -2,11 +2,12 @@
 import React from "react";
 import "./Blog.css";
 import Post from "./Post";
+import { AnimatedTitle } from "../animation/TextAnimation";
 
 const Blog = () => {
   return (
     <section className="blog container section" id="blog">
-      <h2 className="section__title">Latest Posts</h2>
+      <AnimatedTitle text="Latest Posts" />
 
       <div className="blog__container grid">
         {Post.map(({ id, link, category, image, date, title }) => {

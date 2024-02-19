@@ -61,6 +61,21 @@
   display: block;
 }
 
+.skills__bar {
+  width: 100%;
+  height: 20px;
+  background-color: #f3f3f3;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.skills__percentage {
+  display: block;
+  height: 100%;
+  background-color: #4caf50;
+  transition: width 2s ease-in-out;
+}
+
 .development {
   width: 100%;
 }
@@ -91,6 +106,48 @@
 
 .about__title {
   font-size: 1.875rem;
+}
+
+.speaker-container {
+  margin: 0 auto;
+}
+
+.speak-button {
+  background-color: #fff;
+  color: #0056b3;
+  text-align: center;
+  display: inline-block;
+  transition: color 0.3s ease;
+  position: relative;
+}
+
+.speak-button:hover {
+  color: #007bff;
+}
+
+.tooltip {
+  visibility: hidden;
+  width: 120px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  padding: 5px 0;
+  border-radius: 6px;
+
+  /* Position the tooltip */
+  position: absolute;
+  z-index: 1;
+  bottom: 100%;
+  left: 50%;
+  margin-left: -60px;
+}
+
+.speak-button:hover .tooltip {
+  visibility: visible;
+}
+
+.icon {
+  margin: 5px;
 }
 
 @media screen and (max-width: 1024px) {

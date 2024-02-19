@@ -1,6 +1,7 @@
 import React from "react";
 import "./services.css";
 import Image2 from "../../assets/service-2.svg";
+import { AnimatedTitle } from "../animation/TextAnimation";
 
 const data = [
   {
@@ -29,7 +30,7 @@ const data = [
 const Services = () => {
   return (
     <section className="services container section" id="services">
-      <h2 className="section__title">Services</h2>
+      <AnimatedTitle text="Services" />
 
       <div className="services__container grid">
         {data.map(({ id, image, title, description }) => {

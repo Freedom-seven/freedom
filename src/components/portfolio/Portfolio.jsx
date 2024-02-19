@@ -1,90 +1,84 @@
-/* eslint-disable jsx-a11y/anchor-is-valid */
-/* eslint-disable no-unused-vars */
 import React, { useState, useEffect } from "react";
 import "./portfofio.css";
 import Menu from "./Menu";
+import { AnimatedTitle } from "../animation/TextAnimation";
 
 const Portfolio = () => {
-  const [items, setItems] = useState(Menu);
   const [displayLimit, setDisplayLimit] = useState(20);
   const [displayMore, setDisplayMore] = useState(false);
   const [active, setActive] = useState("All");
 
-  const filterItem = (categoryItem) => {
-    const updatedItems = Menu.filter((curElem) => {
-      return curElem.category === categoryItem;
-    });
-
-    setItems(updatedItems);
-    setActive(categoryItem);
-  };
-
   useEffect(() => {
-    setDisplayMore(items.length > displayLimit);
-  }, [items, displayLimit]);
+    const activeItems = Menu.filter(
+      (elem) => active === "All" || elem.category === active
+    );
+    setDisplayMore(activeItems.length > displayLimit);
+  }, [displayLimit, active]);
 
   const handleDisplayMore = () => {
-    setDisplayLimit(displayLimit + 20);
+    setDisplayLimit(displayLimit + 10);
   };
 
   return (
     <section className="work container section" id="work">
-      <h2 className="section__title">Recent Works</h2>
+      <AnimatedTitle text="Recent Works" />
 
       <div className="work__filters">
         <span
           className={`work__item ${active === "All" ? "active" : ""}`}
-          onClick={() => setItems(Menu)}
+          onClick={() => setActive("All")}
         >
           All
         </span>
         <span
           className={`work__item ${active === "Web" ? "active" : ""}`}
-          onClick={() => filterItem("Web")}
+          onClick={() => setActive("Web")}
         >
           Websites
         </span>
         <span
           className={`work__item ${active === "Mobile" ? "active" : ""}`}
-          onClick={() => filterItem("Mobile")}
+          onClick={() => setActive("Mobile")}
         >
           Mobile Apps
         </span>
         <span
           className={`work__item ${active === "Design" ? "active" : ""}`}
-          onClick={() => filterItem("Design")}
+          onClick={() => setActive("Design")}
         >
           Designs
         </span>
       </div>
 
       <div className="work__container grid">
-        {items.slice(0, displayLimit).map((elem) => {
-          const { id, image, title, category, link, github_link } = elem;
-          return (
-            <div className="work__card" key={id}>
-              <div className="work__thumbnail">
-                <img src={image} alt="" className="work__img" />
-                <div className="work__mask"></div>
-              </div>
+        {Menu.filter((elem) => active === "All" || elem.category === active)
+          .slice(0, displayLimit)
+          .map((elem) => {
+            const { id, image, title, category, link, github_link } = elem;
+            return (
+              <div className="work__card" key={id}>
+                <div className="work__thumbnail">
+                  <img src={image} alt={title} className="work__img" />
+                  <div className="work__mask"></div>
+                </div>
 
-              <span className="work__category">{category}</span>
-              <h3 className="work__title">{title}</h3>
-              <div className="work__btns">
-                {link && (
-                  <a href={link} className="work__button">
-                    <i className="icon-link work__button-icon"></i>
-                  </a>
-                )}
-                {github_link && (
-                  <a href={github_link} className="work__buttons">
-                    <i className="icon-social-github work__button-icon"></i>
-                  </a>
-                )}
+                <span className="work__category">{category}</span>
+                <h3 className="work__title">{title}</h3>
+                <div className="work__btns">
+                  {link && (
+                    <a href={link} className="work__button">
+                      <i className="icon-link work__button-icon"></i>
+                    </a>
+                  )}
+                  {github_link && (
+                    <a href={github_link} className="work__buttons">
+                      <i className="icon-social-github work__button-icon"></i>
+                    </a>
+                  )}
+                </div>
               </div>
-            </div>
-          );
-        })}
+            );
+          })}
       </div>
       {displayMore && (
         <button className="work__view-more-btn" onClick={handleDisplayMore}>
@@ -104,17 +98,6 @@ const Portfolio = () => {
             ></path>
           </svg>
         </button>
-      )}
-      {items === Menu && (
-        <div class="card">
-          <p class="card-text">
-            These projects demonstrate my skills in cross platform development,
-            team collaboration, and utilizing various technologies such as HTML,
-            CSS, JavaScript, React, Firebase, React native and API calls. They
-            show my ability to take projects from conception to completion, and
-            my passion for using technology to create innovative solutions.
-          </p>
-        </div>
       )}
     </section>
   );
