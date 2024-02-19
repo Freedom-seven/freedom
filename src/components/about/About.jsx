@@ -60,7 +60,7 @@ const About = () => {
       <AnimatedTitle text="About Me" />
 
       <div className="about__container grid">
-        <img src={Image} alt="" className="about__img" />
+        <img src={Image} alt="Freedom's pic" className="about__img" />
 
         <div className="about__data grid">
           <div className="about__info">

@@ -44,15 +44,15 @@ const Data = [
     desc: "As a Software Developer at EasyParcel, a Malaysia-based company, I worked on various software development projects. I contributed to the development of robust and scalable software solutions, ensuring optimal performance and user experience. I collaborated with the team to implement these solutions, following best practices in software development. Key technologies used in this project include JavaScript, React.js, Node.js, and MongoDB.",
   },
 
-  {
-    id: 6,
-    category: "experience",
-    icon: "icon-briefcase",
-    year: "2023 - 2023",
-    role: "Software Developer ➡ Intern",
-    title: "Industrial Solutions, Inc.",
-    desc: "As a Software Development Intern at Industrial Solutions, Inc., I worked on a variety of specialty services. I gained real-world experience and had the opportunity to contribute to several projects. I also learned from experienced professionals in the field.",
-  },
+  // {
+  //   id: 6,
+  //   category: "experience",
+  //   icon: "icon-briefcase",
+  //   year: "2023 - 2023",
+  //   role: "Software Developer ➡ Intern",
+  //   title: "Industrial Solutions, Inc.",
+  //   desc: "As a Software Development Intern at Industrial Solutions, Inc., I worked on a variety of specialty services. I gained real-world experience and had the opportunity to contribute to several projects. I also learned from experienced professionals in the field.",
+  // },
   {
     id: 7,
     category: "experience",
