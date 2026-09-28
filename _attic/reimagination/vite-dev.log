@@ -1,0 +1,101 @@
+yarn run v1.22.22
+warning ..\..\..\..\package.json: No license field
+$ vite --port 5199
+
+  [32m[1mVITE[22m v5.4.21[39m  [2mready in [0m[1m532[22m[2m[0m ms[22m
+
+  [32m➜[39m  [1mLocal[22m:   [36mhttp://localhost:[1m5199[22m/[39m
+[2m  [32m➜[39m  [1mNetwork[22m[2m: use [22m[1m--host[22m[2m to expose[22m
+[2m4:07:26 PM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/components/Masthead.tsx[22m
+[2m4:07:26 PM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/styles/loupe.css[22m
+[2m4:07:49 PM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/components/Masthead.tsx[22m
+[2m4:07:49 PM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/styles/masthead.css[22m
+[2m4:08:17 PM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/styles/masthead.css[22m
+[2m4:09:43 PM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/loupe/Inspectable.tsx[22m
+[2m4:17:09 PM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/loupe/Inspectable.tsx[22m
+[2m4:19:27 PM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/loupe/Inspectable.tsx[22m
+[2m4:24:09 PM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/loupe/Inspectable.tsx[22m
+[2m4:24:51 PM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/components/Masthead.tsx, /src/components/CaseFiles.tsx, /src/components/FieldIndex.tsx, /src/components/Archive.tsx, /src/components/Experience.tsx, /src/components/Contact.tsx, /src/components/Colophon.tsx[22m
+[2m4:25:49 PM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/loupe/Inspectable.tsx[22m
+[2m4:26:05 PM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/loupe/Inspectable.tsx[22m
+[2m4:26:05 PM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/App.tsx[22m
+[2m4:26:42 PM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/components/Chapter.tsx[22m
+[2m4:27:09 PM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/loupe/Loupe.tsx[22m
+[2m4:27:09 PM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/components/Chapter.tsx[22m
+[2m4:27:46 PM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/components/Masthead.tsx, /src/components/CaseFiles.tsx, /src/components/FieldIndex.tsx, /src/components/Archive.tsx, /src/components/Experience.tsx, /src/components/Contact.tsx, /src/components/Colophon.tsx, /src/App.tsx[22m
+[2m4:28:29 PM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/components/FieldNotes.tsx[22m
+[2m4:28:29 PM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/components/CaseFiles.tsx[22m
+[2m4:28:29 PM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/components/Experience.tsx[22m
+[2m4:28:29 PM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/components/FieldIndex.tsx[22m
+[2m4:28:29 PM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/components/Archive.tsx[22m
+[2m4:28:29 PM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/components/Voices.tsx[22m
+[2m4:28:29 PM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/components/Contact.tsx[22m
+[2m4:28:29 PM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/components/Colophon.tsx[22m
+[2m4:29:23 PM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/components/Masthead.tsx[22m
+[2m4:29:23 PM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/styles/masthead.css[22m
+[2m4:29:42 PM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/loupe/Inspectable.tsx[22m
+[2m4:31:59 PM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/loupe/Inspectable.tsx[22m
+[2m4:31:59 PM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/loupe/Loupe.tsx[22m
+[2m4:31:59 PM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/record/RecordContext.tsx[22m
+[2m4:31:59 PM[22m [36m[1m[vite][22m[39m [33mhmr invalidate [39m[2m/src/record/RecordContext.tsx[22m Could not Fast Refresh ("useRecord" export is incompatible). Learn more at https://github.com/vitejs/vite-plugin-react/tree/main/packages/plugin-react#consistent-components-exports
+[2m4:31:59 PM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/App.tsx, /src/loupe/Loupe.tsx, /src/components/Colophon.tsx, /src/loupe/Inspectable.tsx[22m
+[2m4:33:34 PM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/loupe/Inspectable.tsx[22m
+[2m4:34:25 PM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/loupe/Loupe.tsx[22m
+[2m4:34:47 PM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/styles/loupe.css[22m
+[2m4:37:15 PM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/loupe/Loupe.tsx[22m
+[2m4:39:34 PM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/App.tsx[22m
+[2m4:39:34 PM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/loupe/Inspectable.tsx[22m
+[2m4:39:34 PM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/styles/loupe.css[22m
+[2m4:39:45 PM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/loupe/Loupe.tsx[22m
+[2m4:47:33 PM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/record/RecordContext.tsx[22m
+[2m4:47:33 PM[22m [36m[1m[vite][22m[39m [33mhmr invalidate [39m[2m/src/record/RecordContext.tsx[22m Could not Fast Refresh ("useRecord" export is incompatible). Learn more at https://github.com/vitejs/vite-plugin-react/tree/main/packages/plugin-react#consistent-components-exports
+[2m4:47:33 PM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/App.tsx, /src/loupe/Loupe.tsx, /src/components/Colophon.tsx, /src/loupe/Inspectable.tsx[22m
+[2m4:47:50 PM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/loupe/Inspectable.tsx[22m
+[2m4:48:38 PM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/loupe/Loupe.tsx[22m
+[2m4:53:28 PM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/loupe/Inspectable.tsx[22m
+[2m5:10:55 PM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/components/CaseFiles.tsx, /src/components/Masthead.tsx, /src/components/FieldIndex.tsx, /src/components/Archive.tsx, /src/components/Experience.tsx, /src/components/Contact.tsx, /src/components/Colophon.tsx, /src/App.tsx[22m
+[2m5:10:55 PM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/components/Voices.tsx, /src/components/FieldIndex.tsx, /src/components/Experience.tsx[22m
+[2m5:10:55 PM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/components/FieldNotes.tsx[22m
+[2m5:13:27 PM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/components/Voices.tsx, /src/components/FieldIndex.tsx, /src/components/Experience.tsx[22m
+[2m5:15:07 PM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/index.css[22m
+[2m5:15:07 PM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/index.css[22m
+[2m5:15:07 PM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/styles/voices.css[22m
+[2m5:15:07 PM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/styles/contact.css[22m
+[2m5:18:17 PM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/index.css[22m
+[2m5:26:40 PM[22m [36m[1m[vite][22m[39m [32mpage reload [39m[2mpublic/index.html[22m
+[2m5:38:19 PM[22m [36m[1m[vite][22m[39m [32mpage reload [39m[2m_attic/reimagination/index.html[22m
+[2m5:38:19 PM[22m [36m[1m[vite][22m[39m changed tsconfig file detected: C:\Users\freew\Desktop\Projects\Portfolio-Folder\freedom\_attic\reimagination\tsconfig.json - Clearing cache and forcing full-reload to ensure TypeScript is compiled with updated config values.
+[2m5:38:19 PM[22m [36m[1m[vite][22m[39m changed tsconfig file detected: C:\Users\freew\Desktop\Projects\Portfolio-Folder\freedom\tsconfig.json - Clearing cache and forcing full-reload to ensure TypeScript is compiled with updated config values.
+[2m5:38:19 PM[22m [36m[1m[vite][22m[39m [32mpage reload [39m[2mindex.html[22m
+[2m5:38:19 PM[22m [36m[1m[vite][22m[39m [32mvite.config.ts changed, restarting server...[39m
+Re-optimizing dependencies because vite config has changed
+[2m5:38:19 PM[22m [36m[1m[vite][22m[39m server restarted.
+Error: [31m  Failed to scan for dependencies from entries:
+  C:/Users/freew/Desktop/Projects/Portfolio-Folder/freedom/public/index.html
+C:/Users/freew/Desktop/Projects/Portfolio-Folder/freedom/_attic/reimagination/index.html
+
+  [39m[31mX [41;31m[[41;97mERROR[41;31m][0m [1mThe JSX syntax extension is not currently enabled[0m
+
+    src/App.js:17:4:
+[37m      17 │     [32m<[37m>
+         ╵     [32m^[0m
+
+  The esbuild loader for this file is currently set to "js" but it must be set to "jsx" to be able to parse JSX syntax. You can use "loader: { '.js': 'jsx' }" to do that.
+
+
+    at failureErrorWithLog (C:\Users\freew\Desktop\Projects\Portfolio-Folder\freedom\node_modules\esbuild\lib\main.js:1472:15)
+    at C:\Users\freew\Desktop\Projects\Portfolio-Folder\freedom\node_modules\esbuild\lib\main.js:945:25
+    at runOnEndCallbacks (C:\Users\freew\Desktop\Projects\Portfolio-Folder\freedom\node_modules\esbuild\lib\main.js:1315:45)
+    at buildResponseToResult (C:\Users\freew\Desktop\Projects\Portfolio-Folder\freedom\node_modules\esbuild\lib\main.js:943:7)
+    at C:\Users\freew\Desktop\Projects\Portfolio-Folder\freedom\node_modules\esbuild\lib\main.js:955:9
+    at new Promise (<anonymous>)
+    at requestCallbacks.on-end (C:\Users\freew\Desktop\Projects\Portfolio-Folder\freedom\node_modules\esbuild\lib\main.js:954:54)
+    at handleRequest (C:\Users\freew\Desktop\Projects\Portfolio-Folder\freedom\node_modules\esbuild\lib\main.js:647:17)
+    at handleIncomingPacket (C:\Users\freew\Desktop\Projects\Portfolio-Folder\freedom\node_modules\esbuild\lib\main.js:672:7)
+    at Socket.readFromStdout (C:\Users\freew\Desktop\Projects\Portfolio-Folder\freedom\node_modules\esbuild\lib\main.js:600:7)
+    at Socket.emit (node:events:508:28)
+    at addChunk (node:internal/streams/readable:559:12)
+    at readableAddChunkPushByteMode (node:internal/streams/readable:510:3)
+    at Readable.push (node:internal/streams/readable:390:5)
+    at Pipe.onStreamRead (node:internal/stream_base_commons:189:23)
+[2m5:46:48 PM[22m [36m[1m[vite][22m[39m [32mpage reload [39m[2mpublic/index.html[22m

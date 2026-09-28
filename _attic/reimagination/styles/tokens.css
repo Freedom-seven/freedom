@@ -1,0 +1,196 @@
+/* ————————————————————————————————————————————————
+   The visual world of Inspection Copy.
+
+   Everything here obeys three laws:
+   1. No ornament without a job. No gradient has ever been written here.
+   2. One material (paper), one ink, one verdict color.
+   3. The page is a document; the document is a page.
+   ———————————————————————————————————————————————— */
+
+:root {
+  /* The single sheet. */
+  --paper: #f2eee3;
+  --paper-hi: #f8f5ec;
+  --paper-shade: #e9e3d3;
+  --paper-dim: #b7ad93;
+
+  /* One ink. (faint is darkened to hold WCAG AA at small mono sizes) */
+  --ink: #232019;
+  --ink-soft: #5c5544;
+  --ink-faint: #6f664e;
+  --ink-veil: rgba(35, 32, 25, 0.09);
+
+  /* Verdict color. Nothing else in this world is green. */
+  --verdict: #1e7a35;
+  --verdict-wash: rgba(30, 122, 53, 0.08);
+
+  /* Rules (hairlines). */
+  --rule: rgba(35, 32, 25, 0.18);
+  --rule-strong: rgba(35, 32, 25, 0.42);
+
+  /* Voices of the world.
+     - document serif: the page speaks in it.
+     - record mono: measurements and verifications speak in it. */
+  --serif: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, "Times New Roman", serif;
+  --mono: ui-monospace, "SF Mono", "Cascadia Mono", "Segoe UI Mono", Menlo, Consolas, monospace;
+
+  /* Type scale — fluid, clamp-bounded, tuned by hand. */
+  --step--1: clamp(0.72rem, 0.7rem + 0.1vw, 0.78rem);
+  --step-0: clamp(1rem, 0.95rem + 0.25vw, 1.09rem);
+  --step-1: clamp(1.15rem, 1.06rem + 0.45vw, 1.35rem);
+  --step-2: clamp(1.5rem, 1.32rem + 0.9vw, 1.9rem);
+  --step-3: clamp(1.9rem, 1.5rem + 2vw, 2.75rem);
+  --step-4: clamp(2.4rem, 1.7rem + 3.5vw, 3.9rem);
+  --step-5: clamp(3rem, 1.9rem + 5.5vw, 5.6rem);
+
+  /* Measure: 65ch at body size is the longest honest line. */
+  --measure: 64ch;
+
+  /* Space — one scale, no invented values. */
+  --sp-1: 0.25rem;
+  --sp-2: 0.5rem;
+  --sp-3: 1rem;
+  --sp-4: 1.75rem;
+  --sp-5: 2.75rem;
+  --sp-6: 4.25rem;
+  --sp-7: 6.5rem;
+
+  /* The margin of the document. */
+  --margin: clamp(1.25rem, 4vw, 4rem);
+
+  /* Document width. */
+  --max: 76rem;
+
+  /* Motion: one duration, one curve. The loupe does the rest with opacity. */
+  --t: 190ms;
+  --ease: cubic-bezier(0.23, 0.68, 0.32, 1);
+
+  /* Loupe surface. */
+  --chip-bg: var(--ink);
+  --chip-ink: var(--paper);
+}
+
+/* ——— Global behavior of the material ——— */
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  color-scheme: light;
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--serif);
+  font-size: var(--step-0);
+  line-height: 1.55;
+  font-kerning: normal;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  overflow-y: scroll;
+}
+
+::selection {
+  background: var(--ink);
+  color: var(--paper);
+}
+
+/* Focus: the only glow permitted in this world is a rule.
+   !important survives the `all: unset` resets used on buttons. */
+:focus-visible {
+  outline: 2px solid var(--verdict) !important;
+  outline-offset: 3px;
+  border-radius: 1px;
+}
+
+/* ——— Shared typographic voices ——— */
+
+.record {
+  font-family: var(--mono);
+  font-size: var(--step--1);
+  line-height: 1.5;
+  letter-spacing: 0.01em;
+}
+
+.eyebrow {
+  font-family: var(--mono);
+  font-size: var(--step--1);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+}
+
+.measure {
+  max-width: var(--measure);
+}
+
+a {
+  color: inherit;
+  text-underline-offset: 0.18em;
+  text-decoration-thickness: 1px;
+}
+
+a:hover {
+  text-decoration-style: wavy;
+}
+
+/* Skip link: invisible until it matters. */
+.skip {
+  position: absolute;
+  left: var(--margin);
+  top: -100%;
+  z-index: 60;
+  background: var(--ink);
+  color: var(--paper);
+  font-family: var(--mono);
+  font-size: var(--step--1);
+  padding: 0.55em 0.9em;
+  transition: top var(--t) var(--ease);
+}
+
+.skip:focus-visible {
+  top: var(--sp-3);
+}
+
+/* ——— The seal: the only reusable mark in the world ——— */
+
+.seal {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55em;
+  font-family: var(--mono);
+  font-size: var(--step--1);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--verdict);
+  border: 1px solid var(--verdict);
+  padding: 0.45em 0.8em;
+}
+
+.seal::before {
+  content: "";
+  inline-size: 0.5em;
+  block-size: 0.5em;
+  background: var(--verdict);
+  transform: rotate(45deg);
+}
+
+/* ——— Motion law: one transition, opacity + color only.
+       Transform motion is reserved for the loupe chip alone. ——— */
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    transition-duration: 1ms !important;
+    animation-duration: 1ms !important;
+  }
+}

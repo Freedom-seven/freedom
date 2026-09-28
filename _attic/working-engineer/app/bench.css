@@ -1,0 +1,135 @@
+/* ————— The presence ————— */
+
+.presence {
+  background: var(--panel);
+  border: 1px solid var(--edge);
+  border-left: 3px solid var(--oxide);
+  padding: var(--sp-3) var(--sp-4);
+  max-width: 70ch;
+}
+
+.presence__lines {
+  margin-top: var(--sp-1);
+}
+
+.presence__line {
+  margin: 0 0 var(--sp-1);
+  font-size: var(--text-l);
+  line-height: 1.5;
+  max-width: 62ch;
+}
+
+.presence__line:last-child {
+  margin-bottom: 0;
+}
+
+/* ————— System plates on the bench ————— */
+
+.bench-grid {
+  list-style: none;
+  margin: 0 0 var(--sp-6);
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: var(--sp-3);
+}
+
+.system-plate {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-1);
+  height: 100%;
+  padding: var(--sp-3);
+  text-decoration: none;
+  transition: translate var(--t-fast), box-shadow var(--t-fast);
+}
+
+.system-plate:hover {
+  translate: -2px -2px;
+  box-shadow: 5px 5px 0 0 rgba(27, 34, 38, 0.18);
+}
+
+.system-plate__name {
+  font-size: var(--text-2xl);
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  line-height: 1.15;
+}
+
+.system-plate__premise {
+  color: var(--ink-2);
+  font-size: var(--text-s);
+  line-height: 1.55;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.system-plate__foot {
+  margin-top: auto;
+  padding-top: var(--sp-2);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--sp-1);
+}
+
+.system-plate__open {
+  font-family: var(--mono);
+  font-size: var(--text-xs);
+  color: var(--ink-2);
+}
+
+.system-plate:hover .system-plate__open {
+  color: var(--oxide-deep);
+}
+
+/* ————— The three doors ————— */
+
+.doors {
+  margin-bottom: var(--sp-6);
+}
+
+.doors__grid {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: var(--sp-3);
+}
+
+.door {
+  padding: var(--sp-3);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-1);
+}
+
+.door h3 {
+  margin: 0;
+  font-size: var(--text-l);
+  letter-spacing: -0.01em;
+}
+
+.door p {
+  margin: 0;
+  color: var(--ink-2);
+  font-size: var(--text-s);
+  line-height: 1.55;
+}
+
+.door__go {
+  margin-top: auto;
+  padding-top: var(--sp-2);
+  font-family: var(--mono);
+  font-size: var(--text-s);
+  text-decoration: none;
+  color: var(--ink);
+}
+
+.door__go:hover {
+  color: var(--oxide-deep);
+}

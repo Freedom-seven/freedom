@@ -1,0 +1,128 @@
+/* Correspondence — quiet fields, honest states. */
+
+.contact-lead {
+  font-size: var(--step-1);
+  margin: 0;
+}
+
+.copy-btn {
+  all: unset;
+  cursor: pointer;
+  font-family: var(--mono);
+  font-size: var(--step--1);
+  border: 1px solid var(--rule-strong);
+  padding: 0.15em 0.6em;
+  color: var(--ink-soft);
+}
+
+.copy-btn:hover {
+  color: var(--verdict);
+  border-color: var(--verdict);
+}
+
+.contact-elsewhere {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5em 1.5em;
+  margin: var(--sp-4) 0 0;
+}
+
+.contact-elsewhere a {
+  text-decoration-color: var(--rule-strong);
+}
+
+.contact-form {
+  margin-top: var(--sp-4);
+  max-width: 34rem;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--sp-4);
+}
+
+.form-field {
+  display: block;
+  margin-bottom: var(--sp-3);
+}
+
+.form-label {
+  display: block;
+  font-family: var(--mono);
+  font-size: var(--step--1);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  margin-bottom: 0.3em;
+}
+
+.contact-form input,
+.contact-form textarea {
+  inline-size: 100%;
+  font: inherit;
+  color: var(--ink);
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid var(--rule-strong);
+  padding: 0.35em 0;
+  border-radius: 0;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: none;
+  border-bottom-color: var(--verdict);
+}
+
+.contact-form textarea {
+  resize: vertical;
+  min-height: 7rem;
+}
+
+.form-foot {
+  display: flex;
+  align-items: baseline;
+  gap: 1.25em;
+  flex-wrap: wrap;
+}
+
+.send-btn {
+  all: unset;
+  cursor: pointer;
+  font-family: var(--mono);
+  font-size: var(--step-0);
+  border: 1px solid var(--ink);
+  padding: 0.45em 1.4em;
+  background: var(--ink);
+  color: var(--paper);
+}
+
+.send-btn:hover {
+  background: transparent;
+  color: var(--ink);
+}
+
+.send-btn:disabled {
+  opacity: 0.6;
+  cursor: wait;
+}
+
+.form-note.is-ok {
+  color: var(--verdict);
+}
+
+.form-note.is-err {
+  color: #8a2f1d;
+}
+
+.form-unconfigured {
+  margin-top: var(--sp-3);
+  color: var(--ink-faint);
+}
+
+@media (max-width: 40rem) {
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+}

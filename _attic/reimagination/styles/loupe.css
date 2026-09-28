@@ -1,0 +1,175 @@
+/* The loupe: one bar that arms the page, one chip that testifies. */
+
+.loupe-bar {
+  position: fixed;
+  inset-block-start: 0;
+  inset-inline: 0;
+  z-index: 50;
+  display: flex;
+  justify-content: center;
+  pointer-events: none;
+}
+
+.loupe-bar-inner {
+  pointer-events: auto;
+  display: flex;
+  align-items: center;
+  gap: 0.9em;
+  background: var(--paper-hi);
+  border: 1px solid var(--rule-strong);
+  border-top: none;
+  border-radius: 0 0 2px 2px;
+  padding: 0.5em 1.1em;
+  font-family: var(--mono);
+  font-size: var(--step--1);
+  letter-spacing: 0.06em;
+  color: var(--ink-soft);
+  transition: border-color var(--t) var(--ease);
+}
+
+/* Armed: the tab's border turns to verdict — the page is listening. */
+.loupe-bar-inner[data-armed="true"] {
+  border-color: var(--verdict);
+  color: var(--ink);
+}
+
+.loupe-reading {
+  max-width: 22ch;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.loupe-bar-inner kbd {
+  font-family: inherit;
+  border: 1px solid var(--rule-strong);
+  padding: 0.1em 0.45em;
+  background: var(--paper);
+  color: var(--ink);
+}
+
+/* The arming control — a button styled as part of the bar. */
+.arm {
+  font: inherit;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink);
+  background: none;
+  border: none;
+  border-bottom: 1px solid var(--rule-strong);
+  padding: 0 0 1px 0;
+  cursor: pointer;
+}
+
+.arm[aria-pressed="true"] {
+  color: var(--verdict);
+  border-bottom-color: var(--verdict);
+}
+
+/* ——— The testimony chip ——— */
+
+.chip {
+  position: absolute;
+  z-index: 55;
+  inline-size: min(21rem, calc(100vw - 2rem));
+  background: var(--chip-bg);
+  color: var(--chip-ink);
+  font-family: var(--mono);
+  font-size: var(--step--1);
+  line-height: 1.5;
+  padding: 0.9rem 1rem 0.7rem;
+  /* The notch: the chip's only decoration, and it points at truth. */
+  clip-path: polygon(
+    0 0,
+    0.9rem 0,
+    1.15rem 0.55rem,
+    1.4rem 0,
+    100% 0,
+    100% 100%,
+    0 100%
+  );
+  padding-top: 1.15rem;
+  opacity: 0;
+  transform: translateY(4px);
+  transition: opacity var(--t) var(--ease), transform var(--t) var(--ease);
+}
+
+.chip[data-open="true"] {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.chip-head {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  color: var(--paper-dim);
+  margin-bottom: 0.55rem;
+}
+
+.chip-close {
+  all: unset;
+  cursor: pointer;
+  color: var(--paper-dim);
+  padding: 0 0.2em;
+}
+
+.chip-close:hover {
+  color: var(--chip-ink);
+}
+
+.chip dl {
+  margin: 0;
+}
+
+.chip dt {
+  font-size: 0.68em;
+  letter-spacing: 0.16em;
+  color: var(--paper-dim);
+  margin-top: 0.5em;
+}
+
+.chip dd {
+  margin: 0.1em 0 0;
+  color: var(--chip-ink);
+}
+
+.chip .measured {
+  color: #7ee29a;
+}
+
+.chip .chip-where a {
+  color: #7ee29a;
+}
+
+/* Mobile: the bar collapses to a corner button; the chip is a bottom sheet. */
+@media (max-width: 46rem) {
+  .loupe-bar-inner {
+    inset-inline-end: var(--margin);
+    inset-inline-start: auto;
+    position: absolute;
+    top: 100%;
+    background: var(--paper-hi);
+    border: 1px solid var(--rule-strong);
+    padding: 0.45em 0.8em;
+    gap: 0.5em;
+  }
+  .loupe-bar-inner kbd {
+    display: none;
+  }
+  /* The sheet: fixed placement, owned by the viewport (no inline-style fight). */
+  .chip {
+    position: fixed;
+    inset-inline: 1rem;
+    inset-block-start: auto;
+    inset-block-end: 1rem;
+    inline-size: auto;
+  }
+  .chip::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    background: var(--ink-veil);
+  }
+}

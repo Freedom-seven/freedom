@@ -1,0 +1,98 @@
+/* The sheet: an asymmetric two-column document grid.
+   Left title column + main column, collapsing to one on small screens. */
+
+.sheet {
+  min-height: 100dvh;
+  max-width: var(--max);
+  margin-inline: auto;
+}
+
+/* Each chapter is a ruled band of the document. */
+.chapter {
+  border-top: 1px solid var(--rule);
+  padding: var(--sp-6) var(--margin);
+  display: grid;
+  grid-template-columns: minmax(170px, 250px) minmax(0, 1fr);
+  column-gap: clamp(1.5rem, 4vw, 4rem);
+  row-gap: var(--sp-4);
+  scroll-margin-top: 4.5rem;
+}
+
+/* The chapter's title column. */
+.chapter-head {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--sp-2);
+}
+
+.chapter-no {
+  font-family: var(--mono);
+  font-size: var(--step--1);
+  color: var(--ink-faint);
+  letter-spacing: 0.12em;
+}
+
+.chapter-title {
+  font-size: var(--step-3);
+  font-weight: 400;
+  line-height: 1.06;
+  margin: 0;
+  letter-spacing: -0.01em;
+  /* Long chapter words wrap like print documents do. */
+  hyphens: auto;
+  overflow-wrap: break-word;
+}
+
+.chapter-sub {
+  color: var(--ink-soft);
+  font-style: italic;
+  font-size: var(--step-0);
+  margin: 0;
+  max-width: 30ch;
+}
+
+/* The chapter's body column. */
+.chapter-body {
+  min-width: 0;
+}
+
+/* The masthead — the document's own identity plate. */
+.masthead {
+  border-top: none;
+  padding-top: clamp(2rem, 6vh, 4.5rem);
+  padding-bottom: clamp(2.5rem, 8vh, 6rem);
+  grid-template-columns: minmax(170px, 250px) minmax(0, 1fr);
+}
+
+/* Standard section flow inside chapter bodies. */
+.stack > * + * {
+  margin-top: var(--sp-4);
+}
+
+.stack-tight > * + * {
+  margin-top: var(--sp-2);
+}
+
+/* ——— Responsive law: the document becomes a column, never a shrunk desktop ——— */
+
+@media (max-width: 46rem) {
+  .chapter {
+    grid-template-columns: 1fr;
+    padding: var(--sp-5) var(--margin);
+    row-gap: var(--sp-3);
+  }
+  .chapter-head {
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: baseline;
+    column-gap: var(--sp-3);
+  }
+  .chapter-title {
+    font-size: var(--step-2);
+  }
+  .chapter-sub {
+    font-style: normal;
+    max-width: none;
+  }
+}

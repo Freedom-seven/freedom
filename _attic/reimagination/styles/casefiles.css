@@ -1,0 +1,177 @@
+/* Case files — evidence documents. */
+
+.case {
+  border-top: 1px solid var(--rule);
+  padding-top: var(--sp-4);
+  display: grid;
+  grid-template-columns: 7rem 1fr;
+  gap: 0 var(--sp-4);
+  cursor: pointer;
+}
+
+.case:first-child {
+  border-top: none;
+  padding-top: 0;
+}
+
+.case-plate {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  align-items: flex-start;
+}
+
+.case-exhibit {
+  font-family: var(--serif);
+  font-size: var(--step-4);
+  line-height: 1;
+  color: var(--ink);
+  /* The exhibit letter is the chapter's only ornament, and it is content. */
+}
+
+.case-status {
+  font-family: var(--mono);
+  font-size: var(--step--1);
+  letter-spacing: 0.08em;
+  padding: 0.25em 0.55em;
+  border: 1px solid var(--rule-strong);
+}
+
+.case-status.is-deployed {
+  color: var(--verdict);
+  border-color: var(--verdict);
+}
+
+.case-status.is-source {
+  color: var(--ink-faint);
+}
+
+.case-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.5em 1em;
+}
+
+.case-name {
+  font-size: var(--step-2);
+  font-weight: 400;
+  margin: 0;
+  line-height: 1.1;
+}
+
+.case-kind {
+  color: var(--ink-soft);
+  font-style: italic;
+}
+
+.case-year {
+  color: var(--ink-faint);
+  margin-left: auto;
+}
+
+.case-premise {
+  margin: 0.6em 0 1.2em;
+  font-size: var(--step-1);
+  line-height: 1.45;
+}
+
+.case-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.4fr;
+  gap: var(--sp-4);
+}
+
+.case-label {
+  font-family: var(--mono);
+  font-size: var(--step--1);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  margin: 0 0 0.5em;
+  font-weight: 400;
+}
+
+.case-text {
+  margin: 0;
+  color: var(--ink-soft);
+}
+
+.case-decisions {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.case-decisions li {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 0 1rem;
+  padding: 0.55em 0;
+  border-top: 1px dotted var(--rule);
+}
+
+.case-decisions li:first-child {
+  border-top: none;
+  padding-top: 0;
+}
+
+.case-decision {
+  color: var(--ink);
+}
+
+.case-cost {
+  color: var(--ink-faint);
+  font-size: 0.92em;
+}
+
+.case-foot {
+  margin-top: 1.2em;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.6em 1.5em;
+}
+
+.case-links {
+  list-style: none;
+  display: flex;
+  gap: 1.2em;
+  margin: 0;
+  padding: 0;
+}
+
+.case-stack {
+  color: var(--ink-faint);
+}
+
+/* The hover affordance is a ruling, not a shadow. */
+.case:hover .case-exhibit {
+  color: var(--verdict);
+}
+
+/* ——— Responsive: the file becomes a single ruled column ——— */
+
+@media (max-width: 60rem) {
+  .case {
+    grid-template-columns: 1fr;
+  }
+  .case-plate {
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem;
+  }
+  .case-exhibit {
+    font-size: var(--step-3);
+  }
+  .case-grid {
+    grid-template-columns: 1fr;
+  }
+  .case-decisions li {
+    grid-template-columns: 1fr;
+    gap: 0.15em 0;
+  }
+  .case-cost {
+    display: block;
+  }
+}

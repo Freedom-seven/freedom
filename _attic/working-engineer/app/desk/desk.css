@@ -1,0 +1,59 @@
+/* ————— The desk ————— */
+
+.desk-list {
+  list-style: none;
+  margin: 0 0 var(--sp-6);
+  padding: 0;
+  display: grid;
+  gap: var(--sp-3);
+  max-width: 78ch;
+}
+
+.desk-mode {
+  padding: var(--sp-4);
+}
+
+.desk-mode__need {
+  margin: 0;
+  font-size: var(--text-xl);
+  letter-spacing: -0.01em;
+  line-height: 1.2;
+}
+
+.desk-mode__answer {
+  margin: var(--sp-2) 0 var(--sp-3);
+  line-height: 1.6;
+  max-width: 66ch;
+}
+
+.desk-mode__shows {
+  list-style: none;
+  margin: var(--sp-1) 0 var(--sp-3);
+  padding: 0;
+  display: grid;
+  gap: 0.55em;
+}
+
+.desk-mode__show-link {
+  font-weight: 600;
+  text-decoration-thickness: 1px;
+}
+
+.desk-mode__show-note {
+  color: var(--ink-2);
+  font-size: var(--text-s);
+}
+
+.desk-mode__boundary {
+  margin: 0;
+  border-top: 1px solid var(--edge);
+  padding-top: var(--sp-2);
+  color: var(--ink-2);
+  font-size: var(--text-s);
+  line-height: 1.55;
+  max-width: 66ch;
+}
+
+.desk-mode__boundary .plate-label {
+  margin-right: 0.6em;
+}
