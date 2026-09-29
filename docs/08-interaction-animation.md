@@ -10,10 +10,11 @@ architecture.
 ## The ledger footer (signature system)
 
 Every page footer prints: route · render mode · transferred JS of that page ·
-build id. Numbers come from the build (generated manifest → server component);
-the first scroll into view counts up once (0.8s, ease-out), honoring
-`prefers-reduced-motion` (prints instantly). Numbers are real; a mismatch with
-`/how`'s budget table is a build failure.
+build id. Numbers come from the build (generated manifest → server component)
+and are real; a mismatch with `/how`'s budget table is a build failure.
+Built as built: the ledger prints statically (no count-up). The site's single
+flourish is the hero ship-line sweep, which animates once on arrival and
+prints fully drawn for no-JS and reduced-motion visitors.
 
 ## Micro-interactions (the complete list — nothing else moves)
 
@@ -26,7 +27,7 @@ the first scroll into view counts up once (0.8s, ease-out), honoring
 - Ask console: streamed tokens appear without animation (streaming IS the
   animation); status dot handles state.
 - 404: no motion; dry copy ("Nothing shipped at this address.").
-- Count-up on ledger: the only once-per-load flourish on the site.
+- Hero ship-line sweep on `/`: the only once-per-load flourish on the site.
 
 ## Loading & empty states
 

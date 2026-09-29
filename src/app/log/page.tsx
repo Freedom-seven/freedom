@@ -7,6 +7,7 @@ export const metadata: Metadata = {
   title: "Log",
   description:
     "Dated entries for the rebuild itself: what shipped, what broke, what changed. Nothing aspirational.",
+  alternates: { types: { "application/atom+xml": "/feed.xml" } },
 };
 
 export default function LogPage() {

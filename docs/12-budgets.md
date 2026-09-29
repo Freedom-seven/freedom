@@ -5,7 +5,7 @@
 | Metric | Budget | Notes |
 |---|---|---|
 | First-load shared JS (gzip) | ≤ 130KB | framework included |
-| Per-page first-load JS (gzip) | ≤ 160KB | ask console code only where used |
+| Per-page first-load JS (gzip) | ≤ 160KB | ask console code only where used; /how compares shared+heaviest first-load against this line |
 | LCP (mid-range phone, throttled 4G) | < 2.5s | text-led pages make this easy; verified in lab |
 | CLS | < 0.1 | no late-loading layout contributors by design |
 | INP | < 200ms | no long tasks; filters are reorder-only |
