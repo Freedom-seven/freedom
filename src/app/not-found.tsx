@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { units } from "@/content/units";
 import { Ledger } from "@/components/Ledger";
-import "../page.css";
+import "./page.css";
 
 /**
  * "Not shipped" — the 404. Dry copy, no motion, and the way back in.

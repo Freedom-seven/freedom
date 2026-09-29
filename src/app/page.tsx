@@ -39,9 +39,6 @@ function DecisionMarks() {
           );
         })
       )}
-      <text x={8} y={54} fontSize={9} fontFamily="var(--font-mono)" fill="var(--ink-faint)">
-        one mark per decision — cost line drawn to scale of its honesty
-      </text>
     </svg>
   );
 }
@@ -103,6 +100,9 @@ export default function HomePage() {
           </p>
 
           <DecisionMarks />
+          <p className="hero__marks-note readout">
+            one mark per published decision — the dot sits at the height of its recorded cost
+          </p>
 
           <p className="hero__stand">
             <span>Software engineer. Web, mobile, contracts — and the systems underneath them.</span>

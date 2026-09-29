@@ -8,7 +8,7 @@ const nextConfig = {
   productionBrowserSourceMaps: false,
   env: {
     // Stamped once per build; the ledger prints it as "built".
-    __BUILD_TIME__: new Date().toISOString(),
+    BUILD_TIME_STAMP: new Date().toISOString(),
   },
 };
 

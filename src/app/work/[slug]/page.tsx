@@ -4,7 +4,7 @@ import { notFound } from "next/navigation";
 import { units } from "@/content/units";
 import { Ledger } from "@/components/Ledger";
 import { StatusSeal } from "@/components/StatusSeal";
-import "../../../page.css";
+import "../../page.css";
 
 export function generateStaticParams() {
   return units.map((u) => ({ slug: u.slug }));

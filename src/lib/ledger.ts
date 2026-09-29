@@ -64,6 +64,30 @@ function sharedFiles(appManifest: AppManifest): string[] {
   return [...counts.entries()].filter(([, n]) => n > 1).map(([f]) => f);
 }
 
+/**
+ * Match a concrete route ("/work/krypto-trade") against manifest keys
+ * ("/page", "/work/[slug]/page"). Dynamic segments become [^/]+ and
+ * must match a whole segment — a concrete route finds its template.
+ */
+function matchRouteKey(appManifest: AppManifest, route: string): string | undefined {
+  const exact = route === "/" ? "/page" : `${route}/page`;
+  if (appManifest[exact]) return exact;
+  for (const key of Object.keys(appManifest)) {
+    const pattern =
+      key
+        .replace(/\/page$/, "")
+        .split("/")
+        .map((seg) =>
+          seg.startsWith("[") && seg.endsWith("]")
+            ? "[^/]+"
+            : seg.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")
+        )
+        .join("/") || "/";
+    if (new RegExp(`^${pattern}$`).test(route)) return key;
+  }
+  return undefined;
+}
+
 export function getBuildFacts(route: string, renderMode: string): BuildFacts {
   const { appManifest, buildId } = loadManifests();
 
@@ -79,9 +103,8 @@ export function getBuildFacts(route: string, renderMode: string): BuildFacts {
     };
   }
 
-  // Normalize: manifest keys look like "/page" or "/work/[slug]/page".
-  const pageKey = route === "/" ? "/page" : `${route}/page`;
-  const routeFiles = appManifest[pageKey];
+  const routeKey = matchRouteKey(appManifest, route);
+  const routeFiles = routeKey ? appManifest[routeKey] : undefined;
   const shared = sharedFiles(appManifest);
 
   let jsKB: number | null = null;
@@ -97,7 +120,7 @@ export function getBuildFacts(route: string, renderMode: string): BuildFacts {
     jsKB = jsKB ?? null;
   }
 
-  const builtAt = process.env.__BUILD_TIME__ ?? null;
+  const builtAt = process.env.BUILD_TIME_STAMP ?? null;
 
   return { route, renderMode, jsKB, sharedKB, buildId, builtAt, dev: false };
 }
