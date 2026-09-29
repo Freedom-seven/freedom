@@ -27,25 +27,36 @@ export function curatedAnswer(question: string): { text: string; href?: string }
   if (!q) return { text: MISS };
   const terms = q.split(" ").filter((t) => t.length > 1);
 
-  let best: { score: number; entry: (typeof kb)[number] } | null = null;
+  let best: { score: number; spec: number; entry: (typeof kb)[number] } | null = null;
   for (const entry of kb) {
     let score = 0;
+    let spec = 0;
     for (const kw of entry.keywords) {
       if (kw.includes(" ")) {
-        if (q.includes(kw)) score += 3;
+        if (q.includes(kw)) {
+          score += 4; // a phrase match is intent, not coincidence
+          spec += kw.length;
+        }
         continue;
       }
       // Whole-word match only — substrings like "his" inside "this"
       // must not score, or the stand-in answers questions nobody asked.
       if (new RegExp(`\\b${escapeRe(kw)}\\b`).test(q)) {
         score += 2;
+        spec += kw.length;
       } else if (
         terms.some((t) => t.length >= 4 && (t.startsWith(kw) || kw.startsWith(t)))
       ) {
         score += 1;
+        spec += kw.length;
       }
     }
-    if (score > 0 && (!best || score > best.score)) best = { score, entry };
+    if (
+      score > 0 &&
+      (!best || score > best.score || (score === best.score && spec > best.spec))
+    ) {
+      best = { score, spec, entry };
+    }
   }
 
   if (!best || best.score < 2) return { text: MISS };

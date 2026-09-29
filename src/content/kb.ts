@@ -9,7 +9,7 @@ import { identity } from "./identity";
 export const kb: KbEntry[] = [
   {
     id: "who",
-    keywords: ["who", "about", "yourself", "introduce", "name", "freedom"],
+    keywords: ["who are you", "who is he", "about yourself", "about him", "introduce", "your name", "his name", "freedom"],
     asks: ["Who are you?", "Tell me about yourself."],
     answer: `I'm the digital stand-in for ${identity.name} — software engineer. This page is built from his record: shipped work, published decisions, and the costs that came with them. I can walk you through any of it. I'm not him, and I don't guess.`,
     href: "/me",

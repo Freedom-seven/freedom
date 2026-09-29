@@ -15,6 +15,17 @@ describe("the curated stand-in", () => {
     expect(a.text).toContain("tutorial");
   });
 
+  it("routes the Krypto Trade suggested ask to krypto, not the generic who-entry", () => {
+    const a = curatedAnswer("Tell me about Krypto Trade.");
+    expect(a.text).toContain("Krypto Trade is a web3 front end");
+    expect(a.href).toBe("/work/krypto-trade");
+  });
+
+  it("keeps the generic intro for who-questions", () => {
+    const a = curatedAnswer("Who are you?");
+    expect(a.text).toContain("digital stand-in for");
+  });
+
   it("never invents on a miss — the miss message points to email", () => {
     expect(curatedAnswer("what is his favourite colour").text).toBe(MISS);
     expect(curatedAnswer("").text).toBe(MISS);
