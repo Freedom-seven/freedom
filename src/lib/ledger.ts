@@ -125,10 +125,16 @@ export function getBuildFacts(route: string, renderMode: string): BuildFacts {
   return { route, renderMode, jsKB, sharedKB, buildId, builtAt, dev: false };
 }
 
-/** Whole-app total (shared + heaviest route) for /how's budget table. */
-export function getAppTotals(): { sharedKB: number | null; heaviestKB: number | null; routes: number } {
+/** Whole-app totals for /how's budget table and the OG sheet. */
+export function getAppTotals(): {
+  sharedKB: number | null;
+  heaviestKB: number | null;
+  heaviestFirstLoadKB: number | null;
+  routes: number;
+} {
   const { appManifest, buildId } = loadManifests();
-  if (!appManifest || !buildId) return { sharedKB: null, heaviestKB: null, routes: 0 };
+  if (!appManifest || !buildId)
+    return { sharedKB: null, heaviestKB: null, heaviestFirstLoadKB: null, routes: 0 };
   const shared = sharedFiles(appManifest);
   const sharedKB = shared.reduce((sum, f) => sum + gzKB(f), 0);
   let heaviestKB = 0;
@@ -137,5 +143,10 @@ export function getAppTotals(): { sharedKB: number | null; heaviestKB: number | 
     const kb = own.reduce((sum, f) => sum + gzKB(f), 0);
     if (kb > heaviestKB) heaviestKB = kb;
   }
-  return { sharedKB, heaviestKB, routes: Object.keys(appManifest).length };
+  return {
+    sharedKB,
+    heaviestKB,
+    heaviestFirstLoadKB: sharedKB + heaviestKB,
+    routes: Object.keys(appManifest).length,
+  };
 }

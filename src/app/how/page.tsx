@@ -36,10 +36,13 @@ export default function HowPage() {
       ok: totals.sharedKB === null || totals.sharedKB <= 130,
     },
     {
-      metric: "heaviest route JS (gz)",
-      actual: totals.heaviestKB === null ? "dev build" : `${totals.heaviestKB} KB`,
+      metric: "heaviest route, first load (gz)",
+      actual:
+        totals.heaviestFirstLoadKB === null
+          ? "dev build"
+          : `${totals.heaviestFirstLoadKB} KB`,
       budget: "≤ 160 KB",
-      ok: totals.heaviestKB === null || totals.heaviestKB <= 160,
+      ok: totals.heaviestFirstLoadKB === null || totals.heaviestFirstLoadKB <= 160,
     },
     { metric: "external requests per page", actual: "0", budget: "0", ok: true },
     { metric: "font families", actual: "2, self-hosted via next/font", budget: "2", ok: true },
