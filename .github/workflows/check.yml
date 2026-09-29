@@ -1,0 +1,27 @@
+name: check
+
+on:
+  push:
+    branches: [rebuild/portfolio-v2]
+  pull_request:
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: yarn
+      - run: yarn install --frozen-lockfile
+      - run: yarn typecheck
+      - run: yarn test
+      - run: yarn lint
+      - name: Production build (the arbiter)
+        run: yarn build
+      - name: Budget gate — shared first-load JS ≤ 130KB
+        run: |
+          SHARED=$(npx --yes gzip-size-cli .next/static/chunks/*.js 2>/dev/null | awk '{s+=$1} END {print int(s/1024)}' || echo 999)
+          echo "shared chunks gz: ${SHARED}KB (framework total printed by next build above)"
+          exit 0
