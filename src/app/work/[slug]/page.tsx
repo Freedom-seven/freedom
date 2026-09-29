@@ -17,12 +17,22 @@ const TITLES: Record<string, string> = {
   experiments: "Experiments",
 };
 
+const SHEETS: Record<string, string> = {
+  "covid-19-tracker": "/og-covid-19-tracker.png",
+  "krypto-trade": "/og-krypto-trade.png",
+  fruity: "/og-fruity.png",
+  "qizz-master": "/og-qizz-master.png",
+};
+
 export function generateMetadata({ params }: { params: { slug: string } }): Metadata {
   const unit = units.find((u) => u.slug === params.slug);
   if (!unit) return {};
+  const sheet = SHEETS[unit.slug] ?? "/og-home.png";
   return {
     title: unit.name,
     description: unit.premise,
+    openGraph: { title: unit.name, description: unit.premise, images: [sheet] },
+    twitter: { card: "summary_large_image", images: [sheet] },
   };
 }
 

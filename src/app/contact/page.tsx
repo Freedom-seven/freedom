@@ -12,11 +12,6 @@ export const metadata: Metadata = {
 export default function ContactPage() {
   const rows = [
     {
-      what: "email — the fastest route; read daily",
-      href: `mailto:${identity.email}`,
-      val: identity.email,
-    },
-    {
       what: "github — source of nearly everything on /work",
       href: identity.links.github,
       val: "github.com/Freedom-seven",
@@ -73,9 +68,18 @@ export default function ContactPage() {
             ))}
           </div>
 
-          <div className="contact-row" style={{ marginTop: "0.75rem", cursor: "default" }}>
-            <span className="contact-row__val">{identity.email}</span>
-            <CopyEmail email={identity.email} />
+          <div className="contact-row" style={{ marginTop: "0.75rem" }}>
+            <a
+              href={`mailto:${identity.email}`}
+              className="contact-row__val"
+              style={{ textDecoration: "none" }}
+            >
+              {identity.email}
+            </a>
+            <span style={{ display: "flex", alignItems: "center", gap: "1rem" }}>
+              <span className="contact-row__what readout">email — the fastest route; read daily</span>
+              <CopyEmail email={identity.email} />
+            </span>
           </div>
 
           <p className="readout" style={{ color: "var(--ink-faint)", marginTop: "1.5rem" }}>

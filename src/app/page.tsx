@@ -11,6 +11,12 @@ import "./page.css";
 export const metadata: Metadata = {
   description:
     "Shipped work with its decisions and costs published. Web, mobile, and the systems underneath them — this site measures itself and prints the numbers.",
+  openGraph: {
+    title: `${identity.name} — ships, and prints the cost.`,
+    description: "Software engineer. 28 shipped units, 10 decisions with their costs published, zero external requests.",
+    images: ["/og-home.png"],
+  },
+  twitter: { card: "summary_large_image", images: ["/og-home.png"] },
 };
 
 const featured = units.filter((u) => u.featured && u.depth === "full");
