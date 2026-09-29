@@ -1,0 +1,157 @@
+/* ════════════════════════════════════════════════════════════════
+   THE SHIPPED BUILD — design tokens.
+   Ground: cool daylight. Ink: near-black. Accent: oxide, state only.
+   Machine surfaces read dark; documents read light. That split is
+   the signature. No gradients, no glass, no blur, no glow.
+   ════════════════════════════════════════════════════════════════ */
+
+:root {
+  /* Ground + panels (light document world) */
+  --ground: #f4f5f7;
+  --panel: #fbfcfd;
+  --panel-edge: #d9dde3;
+
+  /* Ink */
+  --ink: #14181d;
+  --ink-secondary: #4a525d;
+  --ink-faint: #646c78; /* ≥4.5:1 on --ground at label sizes */
+
+  /* Accent — STATE ONLY: active pin, focus ring, live dots, measured numbers. */
+  --oxide: #c2410c;        /* large text / UI edges */
+  --oxide-deep: #9a3412;   /* small text on light ground */
+
+  /* Machine surfaces (dark, for readouts and consoles) */
+  --machine: #101418;
+  --machine-edge: #2a323b;
+  --machine-ink: #e8eaed;
+  --machine-dim: #9ba3ab;
+  --machine-accent: #ff8a4c; /* oxide lifted for dark ground */
+
+  /* Seals — honest status only */
+  --live: #1a7f4b;   /* deployed & answering */
+  --quiet: #646c78;  /* source-only / retired */
+
+  /* Type (families injected by next/font as CSS variables) */
+  --font-doc: var(--font-grotesk), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-plex-mono), ui-monospace, "SF Mono", monospace;
+
+  /* Scale */
+  --text-display: clamp(2.75rem, 1.2rem + 5vw, 4.5rem);
+  --text-h2: clamp(1.5rem, 1.2rem + 1.2vw, 1.875rem);
+  --text-h3: 1.25rem;
+  --text-body: 1.0625rem;
+  --text-label: 0.875rem;
+  --text-readout: 0.78125rem; /* 12.5px floor */
+
+  /* Space + layout */
+  --margin: clamp(1.25rem, 4vw, 4.5rem);
+  --max: 72.5rem;
+  --section: clamp(3.5rem, 8vw, 6rem);
+
+  /* Elevation: hard offset, never a blur */
+  --lift: 0 2px 0 0 var(--machine);
+
+  /* Motion — one language */
+  --ease: cubic-bezier(0.2, 0, 0, 1);
+  --fast: 160ms;
+  --settle: 220ms;
+}
+
+/* ── Base ─────────────────────────────────────────────────────── */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--ground);
+  color: var(--ink);
+  font-family: var(--font-doc);
+  font-size: var(--text-body);
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+}
+
+h1,
+h2,
+h3 {
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  text-wrap: balance;
+}
+
+a {
+  color: inherit;
+}
+
+img,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+::selection {
+  background: var(--oxide);
+  color: #fff;
+}
+
+/* Focus: the oxide ring, everywhere, no exceptions */
+:focus-visible {
+  outline: 2px solid var(--oxide);
+  outline-offset: 2px;
+  border-radius: 1px;
+}
+
+/* Skip link — first in DOM, visible on focus */
+.skip-link {
+  position: absolute;
+  left: var(--margin);
+  top: -100%;
+  z-index: 100;
+  background: var(--machine);
+  color: var(--machine-ink);
+  font-family: var(--font-mono);
+  font-size: var(--text-label);
+  padding: 0.5rem 0.875rem;
+  text-decoration: none;
+}
+
+.skip-link:focus-visible {
+  top: 0.5rem;
+}
+
+/* Mono readouts (ledger, seals, machine panels) */
+.readout {
+  font-family: var(--font-mono);
+  font-size: var(--text-readout);
+  letter-spacing: 0.02em;
+}
+
+/* Reduced motion: everything resolves instantly. No exceptions. */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
