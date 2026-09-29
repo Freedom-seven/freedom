@@ -1,5 +1,4 @@
 import { getBuildFacts } from "@/lib/ledger";
-import { LedgerCount } from "./LedgerCount";
 
 /**
  * THE LEDGER — every page prints its own build facts, generated from the
